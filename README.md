@@ -15,6 +15,10 @@
 <img src="https://img.shields.io/github/stars/henriquemap/tenten">
 <img src="https://img.shields.io/github/license/henriquemap/tenten">
 </div>
+<br>
+<div align=center>
+<a href="https://wakatime.com/badge/user/1e53636e-c916-4d50-9ce1-f3ac75a883e3/project/652e9eee-112c-411d-a501-8b225048489c"><img src="https://wakatime.com/badge/user/1e53636e-c916-4d50-9ce1-f3ac75a883e3/project/652e9eee-112c-411d-a501-8b225048489c.svg" alt="wakatime"></a>
+<br>
 <hr>
 
 Data: 27/01/2023
