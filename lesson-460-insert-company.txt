@@ -1,0 +1,166 @@
+wm> db.estados.insert({
+    nome: "São Paulo",
+    sigla: "SP",
+    regiao: "Sudeste",
+    cidades: [{
+        _id: ObjectId(),
+        nome: "Campinas",
+        area: 795.7,
+        prefeito: "Jonas Donizete",
+        populacao: 1081000
+    },{
+        _id: ObjectId(),
+        nome: "Guarulhos",
+        populacao: 1325000
+    },{
+        _id: ObjectId(),
+        nome: "Sorocaba",
+        distanciaCapital: 87,
+        populacao: 644919
+    },{
+        nome: "Santos",
+        populacao: 433966
+    }],
+    populacao: 45340000
+})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("63d6d4a8bd271884f32d3f05") }
+}
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d6d4a8bd271884f32d3f05"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidades: [
+      {
+        _id: ObjectId("63d6d4a8bd271884f32d3f02"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d6d4a8bd271884f32d3f03"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d6d4a8bd271884f32d3f04"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      },
+      { nome: 'Santos', populacao: 433966 }
+    ],
+    populacao: 45340000
+  }
+]
+wm> 
+
+
+wm> db.empresas.insert({nome: "Bradesco", estadoId: ObjectId("63d6d4a8bd271884f32d3f05")})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("63d6d6abbd271884f32d3f06") }
+}
+
+wm> db.empresas.insert({
+    nome: "Vale",
+    cidade: ObjectId("63d6d4a8bd271884f32d3f04")
+})
+
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("63d6d74abd271884f32d3f07") }
+}
+wm> db.empresas.find()
+[
+  {
+    _id: ObjectId("63d6d6abbd271884f32d3f06"),
+    nome: 'Bradesco',
+    estadoId: ObjectId("63d6d4a8bd271884f32d3f05")
+  },
+  {
+    _id: ObjectId("63d6d74abd271884f32d3f07"),
+    nome: 'Vale',
+    cidade: ObjectId("63d6d4a8bd271884f32d3f04")
+  }
+]
+wm> db.estados.insert({
+    nome: "Rio de Janeiro",
+    sigla: "RJ",
+    regiao: "Sudeste",
+    cidades: [{
+        _id: ObjectId(),
+        nome: "Niterói",
+        area: 133.9,
+        populacao: 487562
+    }]
+})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("63d6d7fcbd271884f32d3f09") }
+}
+wm> db.empresas.find()
+[
+  {
+    _id: ObjectId("63d6d6abbd271884f32d3f06"),
+    nome: 'Bradesco',
+    estadoId: ObjectId("63d6d4a8bd271884f32d3f05")
+  },
+  {
+    _id: ObjectId("63d6d74abd271884f32d3f07"),
+    nome: 'Vale',
+    cidade: ObjectId("63d6d4a8bd271884f32d3f04")
+  }
+]
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d6d4a8bd271884f32d3f05"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidades: [
+      {
+        _id: ObjectId("63d6d4a8bd271884f32d3f02"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d6d4a8bd271884f32d3f03"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d6d4a8bd271884f32d3f04"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      },
+      { nome: 'Santos', populacao: 433966 }
+    ],
+    populacao: 45340000
+  },
+  {
+    _id: ObjectId("63d6d7fcbd271884f32d3f09"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [
+      {
+        _id: ObjectId("63d6d7fcbd271884f32d3f08"),
+        nome: 'Niterói',
+        area: 133.9,
+        populacao: 487562
+      }
+    ]
+  }
+]
+wm> 
+
