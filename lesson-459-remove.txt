@@ -1,0 +1,89 @@
+wm> db.estados.count()
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.
+5
+wm> db.estados.remove({sigla: "AC"})
+DeprecationWarning: Collection.remove() is deprecated. Use deleteOne, deleteMany, findOneAndDelete, or bulkWrite.
+{ acknowledged: true, deletedCount: 3 }
+wm> db.estados.count()
+2
+
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  },
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidade: [
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd25"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd26"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd27"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      }
+    ],
+    populacao: 45340000,
+    cidades: [ { nome: 'Santos', populacao: 433966 } ]
+  }
+]
+
+wm> db.estados.remove({populacao: {$exists: true}},1)
+{ acknowledged: true, deletedCount: 1 }
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  }
+]
+wm> db.estados.count()
+1
+wm> db.estados.update({sigla: "RJ"}, {$set: {populacao: 16720000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ],
+    populacao: 16720000
+  }
+]
+
+wm> db.estados.remove({populacao: {$lt: 20000000}})
+{ acknowledged: true, deletedCount: 1 }
+wm> db.estados.count()
+0
+wm> db.estados.find()
+
+wm> 
