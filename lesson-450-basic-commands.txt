@@ -1,0 +1,27 @@
+Iniciar o servidor 
+$ brew services start mongodb-community@5.0
+
+Consultar serviços brew
+$ brew services
+
+Executar o servidor
+$ mongosh mongod
+
+Consultar todos os métodos disponíveis do mongoDB
+$ db. 
+Pressione TAB duas vezes
+
+Consultar todos os bancos de dados
+$ show dbs
+
+Criar um novo banco de dados
+$ use <name-database>
+
+Criar coleções / tabelas
+$ db.createCollection('estados')
+
+Consultar coleções / tabelas
+$ show collections
+
+Excluir coleções / tabelas
+$ db.estados.drop()

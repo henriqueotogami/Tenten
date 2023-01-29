@@ -1,0 +1,242 @@
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d59cc8fa72d5016ad3fd21"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  },
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidade: [
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd25"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd26"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd27"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      }
+    ]
+  }
+]
+wm> db.estados.find().pretty()
+[
+  {
+    _id: ObjectId("63d59cc8fa72d5016ad3fd21"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  },
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidade: [
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd25"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd26"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd27"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      }
+    ]
+  }
+]
+wm> wm> db.estados.findOne()
+{
+  _id: ObjectId("63d59cc8fa72d5016ad3fd21"),
+  nome: 'Acre',
+  sigla: 'AC',
+  regiao: 'Norte'
+}
+wm> db.estados.findOne({sigla: "RJ"})
+{
+  _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+  nome: 'Rio de Janeiro',
+  sigla: 'RJ',
+  regiao: 'Sudeste',
+  cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+}
+wm> db.estados.find({sigla: "RJ"})
+[
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  }
+]
+wm> db.estados.find({$or: [{sigla: "RJ"}, {sigla:"AC"}]})
+[
+  {
+    _id: ObjectId("63d59cc8fa72d5016ad3fd21"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  }
+]
+wm> wm> db.estados.find({populacao: {$exists: true}})
+
+wm> db.estados.find().skip(1)
+[
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  },
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidade: [
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd25"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd26"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd27"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      }
+    ]
+  }
+]
+wm> db.estados.find().skip(1).limit(2)
+[
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  }
+]
+wm> db.estados.count()
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.
+5
+wm> db.estados.find({sigla: "SP"},{nome: 1, sigla: 1})
+[
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP'
+  }
+]
+wm> db.estados.find({sigla: "SP"},{"cidades.nome": 1, _id: 0})
+[ {} ]
+wm> db.estados.find({sigla: "SP"},{"cidades.nome": 1, sigla: 1, _id: 0})
+[ { sigla: 'SP' } ]
+wm> 
