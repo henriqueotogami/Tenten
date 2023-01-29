@@ -1,0 +1,269 @@
+
+wm> db.estados.update({sigla: "SP"},{$set: {populacao: 45340000}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+wm> db.estados.updateOne({sigla: "SP"},{$set: {populacao: 45340000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d59cc8fa72d5016ad3fd21"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  },
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidade: [
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd25"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd26"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd27"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      }
+    ],
+    populacao: 45340000
+  }
+]
+wm> db.estados.update({sigla: "AL"},{$set: {cidades: [{nome: "Sergipe"}]}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d59cc8fa72d5016ad3fd21"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  },
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidade: [
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd25"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd26"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd27"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      }
+    ],
+    populacao: 45340000
+  }
+]
+wm> db.estados.update({sigla: "AC"},{$set: {cidades: [{nome: "Sergipe"}]}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d59cc8fa72d5016ad3fd21"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte',
+    cidades: [ { nome: 'Sergipe' } ]
+  },
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  },
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidade: [
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd25"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd26"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd27"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      }
+    ],
+    populacao: 45340000
+  }
+]
+wm> db.estados.update({sigla: "SP"},{$push: {cidades: {nome: "Santos", populacao: 433966}}})
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+wm> db.estados.find()
+[
+  {
+    _id: ObjectId("63d59cc8fa72d5016ad3fd21"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte',
+    cidades: [ { nome: 'Sergipe' } ]
+  },
+  {
+    _id: ObjectId("63d5a232fa72d5016ad3fd22"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a2d5fa72d5016ad3fd23"),
+    nome: 'Acre',
+    sigla: 'AC',
+    regiao: 'Norte'
+  },
+  {
+    _id: ObjectId("63d5a73ffa72d5016ad3fd24"),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niterói', area: 133.9, populacao: 487562 } ]
+  },
+  {
+    _id: ObjectId("63d5ab1bfa72d5016ad3fd28"),
+    nome: 'São Paulo',
+    sigla: 'SP',
+    regiao: 'Sudeste',
+    cidade: [
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd25"),
+        nome: 'Campinas',
+        area: 795.7,
+        prefeito: 'Jonas Donizete',
+        populacao: 1081000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd26"),
+        nome: 'Guarulhos',
+        populacao: 1325000
+      },
+      {
+        _id: ObjectId("63d5ab1bfa72d5016ad3fd27"),
+        nome: 'Sorocaba',
+        distanciaCapital: 87,
+        populacao: 644919
+      }
+    ],
+    populacao: 45340000,
+    cidades: [ { nome: 'Santos', populacao: 433966 } ]
+  }
+]
+wm> db.estados.find({populacao: {$exists: true}}, {_id: 0, nome: 1})
+[ { nome: 'São Paulo' } ]
+wm> 

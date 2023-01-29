@@ -42,5 +42,5 @@ wm> db.estados.aggregate([ { $match: { "cidade.nome": "Sorocaba" } }, { $unwind:
     }
   }
 ]
-wm> 
+wm>
 
