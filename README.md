@@ -2,18 +2,18 @@
 
 # Estudos de banco de dados não relacional (NoSQL) MongoDB.
 
-<img width="auto" src="https://github.com/HenriqueMAP/tenten/blob/main/tenten.png?raw=true">
+<img width="auto" src="https://github.com/henriqueotogami/tenten/blob/main/tenten.png?raw=true">
 
 <br>
 <br>
 <div align="center">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/henriquemap/tenten">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/henriqueotogami/tenten">
 </div>
 <br>
-<img src="https://img.shields.io/github/issues/henriquemap/tenten">
-<img src="https://img.shields.io/github/forks/henriquemap/tenten">
-<img src="https://img.shields.io/github/stars/henriquemap/tenten">
-<img src="https://img.shields.io/github/license/henriquemap/tenten">
+<img src="https://img.shields.io/github/issues/henriqueotogami/tenten">
+<img src="https://img.shields.io/github/forks/henriqueotogami/tenten">
+<img src="https://img.shields.io/github/stars/henriqueotogami/tenten">
+<img src="https://img.shields.io/github/license/henriqueotogami/tenten">
 </div>
 <br>
 <div align=center>
@@ -130,7 +130,7 @@ $ show dbs
 
 > ### Caso você queira ajudar a melhorar este repositório, qualquer ajuda é bem vinda.
 
-- [x] Faça um **fork** deste repositório (https://github.com/HenriqueMAP/tenten/fork);
+- [x] Faça um **fork** deste repositório (https://github.com/henriqueotogami/tenten/fork);
 - [x] Crie um **branch** para adicionar as suas modificações ` git checkout -b meu-novo-recurso `;
 - [x] Faça um **commit** ` git commit -am 'feature: Adicionando um novo recurso ...'`;
 - [x] Faça um **push** ` git push origin meu-novo-recurso ` ;
