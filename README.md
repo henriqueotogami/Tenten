@@ -292,11 +292,11 @@ Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICEN
 
 Caso você queira ajudar a melhorar este repositório, qualquer ajuda é bem vinda.
 
--[x] Faça um **fork** deste repositório (https://github.com/henriqueotogami/tenten/fork)
--[x] Crie um **branch** para adicionar as suas modificações `git checkout -b meu-novo-recurso`
--[x] Faça um **commit** `git commit -am 'feature: Adicionando um novo recurso ...'`
--[x] Faça um **push** `git push origin meu-novo-recurso`
--[x] Crie uma nova **pull request** neste repositório
+- ✅ Faça um **fork** deste repositório (https://github.com/henriqueotogami/tenten/fork)
+- ✅ Crie um **branch** para adicionar as suas modificações `git checkout -b meu-novo-recurso`
+- ✅ Faça um **commit** `git commit -am 'feature: Adicionando um novo recurso ...'`
+- ✅ Faça um **push** `git push origin meu-novo-recurso`
+- ✅ Crie uma nova **pull request** neste repositório
 
 **Depois que sua solicitação (pull request) for aceita e adicionada (merged) ao ramo principal (branch main), você pode excluir sua branch tranquilamente.**
 ---
