@@ -315,5 +315,5 @@ aprender programação, banco de dados orientado a documentos
 
 <br>
 <div align="center">
-<img width="auto" src="https://github.com/henriqueotogami/tenten/blob/main/resources/kofi-henrique-otogami.jpg?raw=true">
+<img width="auto" src="https://github.com/henriqueotogami/tenten/blob/main/images/kofi-henrique-otogami.jpg?raw=true">
 </div>
